@@ -4,8 +4,7 @@
   "description": "Application web interactive de révision pour le module M352 (Sécurité de la virtualisation et du Cloud Computing - ENSIASD, Prof. AGALIT)",
   "scripts": {
     "dev": "python3 server.py || python3 -m http.server 8080 --bind 0.0.0.0 || npx serve -l 8080 .",
-    "start": "python3 server.py",
-    "build": "echo 'Application statique prête sans étape de compilation requise !' && exit 0"
+    "start": "python3 server.py"
   },
   "keywords": [
     "cybersecurite",
