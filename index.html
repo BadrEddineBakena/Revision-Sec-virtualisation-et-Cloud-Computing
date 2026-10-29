@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>M352 Révision Interactive • Sécurité Virtualisation & Cloud (ENSIASD)</title>
+  <meta name="description" content="Application de révision complète et interactive pour le module M352 – Sécurité de la virtualisation et du Cloud Computing (Filière Sécurité IT et Confiance Numérique, ENSIASD, Prof. AGALIT)">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛡️</text></svg>">
+</head>
+<body>
+
+  <!-- En-tête de l'application -->
+  <header class="app-header">
+    <div class="header-inner">
+      <div class="brand-box" onclick="window.App.navigateTo('dashboard')" title="Aller à l'accueil">
+        <span class="brand-logo">🛡️</span>
+        <div class="brand-text">
+          <h1>M352 • Sécurité Cloud & Virt</h1>
+          <span class="brand-sub">ENSIASD — Filière Sécurité IT (Prof. AGALIT)</span>
+        </div>
+      </div>
+
+      <!-- Recherche globale instantanée -->
+      <div class="header-search-wrap">
+        <input type="text" id="global-search-input" class="search-input" placeholder="🔍 Rechercher (ex: Hyperviseur, IAM, NAT, KMS...)" autocomplete="off">
+        <div id="global-search-results" class="search-results-dropdown hidden"></div>
+      </div>
+
+      <!-- Actions rapides en-tête -->
+      <div class="header-actions">
+        <button class="btn btn-outline btn-sm" onclick="window.NetworkShare.openModal()" title="Accéder depuis un smartphone, tablette ou réseau local">
+          📱 Réseau Local
+        </button>
+        <span class="badge badge-success" id="global-progress-badge" title="Progression globale du cours">0%</span>
+        <button id="theme-toggle-btn" class="btn btn-secondary btn-sm" onclick="window.App.toggleTheme()" title="Basculer Mode Clair / Sombre">
+          ☀️ Mode Clair
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Barre de navigation principale responsive -->
+  <nav class="app-nav">
+    <div class="nav-container" id="nav-menu">
+      <a href="#dashboard" class="nav-link active">🏠 Accueil</a>
+      <a href="#ch1" class="nav-link">📖 CH1 : Fondamentaux</a>
+      <a href="#ch2" class="nav-link">☁️ CH2 : Architecture & Risques</a>
+      <a href="#ch3" class="nav-link">🛡️ CH3 : Virtualisation</a>
+      <a href="#td1" class="nav-link">📝 TD1 : Risques (AtlasTech)</a>
+      <a href="#tp1" class="nav-link">💻 TP1 : VirtualBox & Linux</a>
+      <a href="#cases" class="nav-link">🏫 Études de Cas</a>
+      <a href="#flashcards" class="nav-link">🃏 Flashcards</a>
+      <a href="#exam" class="nav-link">⏱️ Examen Blanc</a>
+      <a href="#confusions" class="nav-link">⚖️ À ne pas confondre</a>
+      <a href="#glossary" class="nav-link">📚 Glossaire</a>
+      <a href="#sheets" class="nav-link">📑 Fiches PDF</a>
+    </div>
+  </nav>
+
+  <!-- Conteneur principal dynamique (SPA) -->
+  <main id="main-content" class="main-wrapper" role="main">
+    <div class="loading-state">
+      <p>Chargement du module pédagogique M352...</p>
+    </div>
+  </main>
+
+  <!-- Pied de page -->
+  <footer class="app-footer no-print">
+    <div class="footer-inner">
+      <p>Module <strong>M352 – Sécurité de la virtualisation et du Cloud Computing</strong> (Semestre S9 / Dernière année)</p>
+      <p>Filière Sécurité IT et Confiance Numérique • ENSIASD • Enseignant : <strong>Prof. AGALIT Mohamed Amine</strong></p>
+      <p class="footer-offline-badge">🔒 100% Hors-ligne • Sans backend • Sauvegarde locale persistante (LocalStorage)</p>
+    </div>
+  </footer>
+
+  <!-- CHARGEMENT DES DONNÉES PÉDAGOGIQUES DU COURS -->
+  <script src="js/data/glossary.js"></script>
+  <script src="js/data/confusions.js"></script>
+  <script src="js/data/ch1.js"></script>
+  <script src="js/data/ch2.js"></script>
+  <script src="js/data/ch3.js"></script>
+  <script src="js/data/td1.js"></script>
+  <script src="js/data/tp1.js"></script>
+  <script src="js/data/cases.js"></script>
+
+  <!-- CHARGEMENT DES MOTEURS ET COMPOSANTS INTERACTIFS -->
+  <script src="js/components/quizEngine.js"></script>
+  <script src="js/components/flashcards.js"></script>
+  <script src="js/components/networkSim.js"></script>
+  <script src="js/components/riskMatrixSim.js"></script>
+  <script src="js/components/archBuilder.js"></script>
+  <script src="js/components/sharedRespMatrix.js"></script>
+  <script src="js/components/terminalSim.js"></script>
+  <script src="js/components/qrModal.js"></script>
+
+  <!-- APPLICATION PRINCIPALE -->
+  <script src="js/app.js"></script>
+</body>
+</html>
+
